@@ -1,6 +1,5 @@
 package com.example.learningjetpackcompose
 
-import android.hardware.lights.Light
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,7 +17,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.learningjetpackcompose.ui.theme.LightGrey
+import com.example.learningjetpackcompose.ui.theme.MediumGrey
 import com.example.learningjetpackcompose.ui.theme.Orange
+
 
 @Composable
 fun Calculator(
@@ -78,26 +79,129 @@ fun Calculator(
             horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
         ) {
             CalculationButton(
-                symbol = "AC",
-                modifier = Modifier.background(LightGrey)
-                    .aspectRatio(2f)
-                    .weight(2f),
-                onClick = {onAction(CalculatorAction.Clear)}
-            )
-            CalculationButton(
-                symbol = "DEL",
-                modifier = Modifier.background(LightGrey)
+                symbol = "7",
+                modifier = Modifier.background(MediumGrey)
                     .aspectRatio(1f)
                     .weight(1f),
-                onClick = {onAction(CalculatorAction.Delete)}
+                onClick = {onAction(CalculatorAction.Number(7))}
             )
             CalculationButton(
-                symbol = "/",
+                symbol = "8",
+                modifier = Modifier.background(MediumGrey)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Number(8))}
+            )
+            CalculationButton(
+                symbol = "9",
+                modifier = Modifier.background(MediumGrey)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Number(9))}
+            )
+            CalculationButton(
+                symbol = "x",
                 modifier = Modifier.background(Orange)
                     .aspectRatio(1f)
                     .weight(1f),
-                onClick = {onAction(CalculatorAction.Operation(CalculateOperation.Divide))}
+                onClick = {onAction(CalculatorAction.Operation(CalculateOperation.Multiply))}
             )
+        }
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
+        ) {
+            CalculationButton(
+                symbol = "4",
+                modifier = Modifier.background(MediumGrey)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Number(4))}
+            )
+            CalculationButton(
+                symbol = "5",
+                modifier = Modifier.background(MediumGrey)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Number(5))}
+            )
+            CalculationButton(
+                symbol = "6",
+                modifier = Modifier.background(MediumGrey)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Number(6))}
+            )
+            CalculationButton(
+                symbol = "-",
+                modifier = Modifier.background(Orange)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Operation(CalculateOperation.Subtract))}
+            )
+        }
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
+        ) {
+            CalculationButton(
+                symbol = "1",
+                modifier = Modifier.background(MediumGrey)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Number(1))}
+            )
+            CalculationButton(
+                symbol = "2",
+                modifier = Modifier.background(MediumGrey)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Number(2))}
+            )
+            CalculationButton(
+                symbol = "3",
+                modifier = Modifier.background(MediumGrey)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Number(3))}
+            )
+            CalculationButton(
+                symbol = "+",
+                modifier = Modifier.background(Orange)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Operation(CalculateOperation.Add))}
+            )
+        }
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
+        ) {
+            CalculationButton(
+                symbol = "0",
+                modifier = Modifier.background(LightGrey)
+                    .aspectRatio(2f)
+                    .weight(2f),
+                onClick = {onAction(CalculatorAction.Number(0))}
+            )
+            CalculationButton(
+                symbol = ".",
+                modifier = Modifier.background(LightGrey)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Decimal)}
+            )
+            CalculationButton(
+                symbol = "=",
+                modifier = Modifier.background(Orange)
+                    .aspectRatio(1f)
+                    .weight(1f),
+                onClick = {onAction(CalculatorAction.Calculate)}
+            )
+
         }
     }
 
