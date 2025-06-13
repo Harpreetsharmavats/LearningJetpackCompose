@@ -51,6 +51,7 @@ class CalculatorViewmodel : ViewModel() {
     }
 
     private fun enterNumber(i: Int) {
+        Log.d("CalculatorDebug", "Number entered: $i")
       if (state.operation == null){
           if (state.number1.length >= MAX_NUM_LENGTH){
               return

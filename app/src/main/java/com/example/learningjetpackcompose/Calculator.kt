@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.learningjetpackcompose.ui.theme.LightGrey
 import com.example.learningjetpackcompose.ui.theme.MediumGrey
 import com.example.learningjetpackcompose.ui.theme.Orange
@@ -39,12 +40,13 @@ fun Calculator(
             verticalArrangement = Arrangement.spacedBy(buttonSpacing)
         ) {
             Text(
-                text = state.number1 + (state.operation ?: "") + state.number2,
+                text = state.number1 + (state.operation?.symbol ?: "") + state.number2,
                 textAlign = TextAlign.End,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 36.dp),
-                fontWeight = FontWeight.Light,
+                    .padding(vertical = 32.dp),
+                fontWeight = FontWeight.Normal,
+                fontSize = 80.sp,
                 color = White,
                 maxLines = 2
             )
