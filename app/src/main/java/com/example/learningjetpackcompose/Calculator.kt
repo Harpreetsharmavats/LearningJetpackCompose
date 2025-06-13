@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.example.learningjetpackcompose.ui.theme.LightGrey
 import com.example.learningjetpackcompose.ui.theme.MediumGrey
 import com.example.learningjetpackcompose.ui.theme.Orange
+import com.example.learningjetpackcompose.ui.theme.White
 
 
 @Composable
@@ -42,9 +43,9 @@ fun Calculator(
                 textAlign = TextAlign.End,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 50.dp),
+                    .padding(vertical = 36.dp),
                 fontWeight = FontWeight.Light,
-                color = Color.White,
+                color = White,
                 maxLines = 2
             )
 

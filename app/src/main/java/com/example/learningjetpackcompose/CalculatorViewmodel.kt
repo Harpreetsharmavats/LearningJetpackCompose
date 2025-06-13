@@ -1,5 +1,6 @@
 package com.example.learningjetpackcompose
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -10,6 +11,8 @@ class CalculatorViewmodel : ViewModel() {
         private set
 
     fun onAction(action: CalculatorAction) {
+        Log.d("CalculatorAction", "Action received: $action")
+
         when (action) {
             is CalculatorAction.Calculate -> performCalculation()
             is CalculatorAction.Clear -> state = CalculatorState()
