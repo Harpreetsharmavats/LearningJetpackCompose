@@ -1,4 +1,4 @@
-package com.example.learningjetpackcompose
+package com.example.learningjetpackcompose.Calculator
 
  sealed class CalculatorAction {
   data class Number(val number: Int): CalculatorAction()

@@ -1,4 +1,4 @@
-package com.example.learningjetpackcompose
+package com.example.learningjetpackcompose.Calculator
 
 data class CalculatorState(
     var number1 : String = "",
