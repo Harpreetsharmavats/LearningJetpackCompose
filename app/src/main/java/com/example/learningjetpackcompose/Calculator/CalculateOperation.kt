@@ -1,4 +1,4 @@
-package com.example.learningjetpackcompose
+package com.example.learningjetpackcompose.Calculator
 
 sealed class CalculateOperation(val symbol: String) {
     object Add : CalculateOperation("+")

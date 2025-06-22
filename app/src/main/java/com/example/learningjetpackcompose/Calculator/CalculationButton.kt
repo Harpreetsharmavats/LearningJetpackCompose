@@ -1,4 +1,4 @@
-package com.example.learningjetpackcompose
+package com.example.learningjetpackcompose.Calculator
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
