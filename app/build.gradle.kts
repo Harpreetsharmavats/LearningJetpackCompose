@@ -84,16 +84,17 @@ dependencies {
     implementation ("androidx.room:room-ktx:2.7.2")
 
     // Hilt
-    implementation ("com.google.dagger:hilt-android:2.38.1")
+    implementation ("com.google.dagger:hilt-android:2.51.1")
     ksp ("com.google.dagger:hilt-compiler:2.56.2")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
     // Jetpack Compose
-    implementation ("androidx.compose.ui:ui:1.1.1")
-    implementation ("androidx.compose.material:material:1.1.1")
-    implementation ("androidx.compose.ui:ui-tooling-preview:1.1.1")
+    implementation ("androidx.compose.ui:ui:1.8.3")
+    implementation ("androidx.compose.material:material:1.8.3")
+    implementation ("androidx.compose.ui:ui-tooling-preview:1.8.3")
     implementation ("androidx.activity:activity-compose:1.4.0")
 
     // ViewModel
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.1")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.1")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
 
     // Navigation

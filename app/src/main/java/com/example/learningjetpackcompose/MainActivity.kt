@@ -6,8 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.learningjetpackcompose.Calculator.Calculator
 import com.example.learningjetpackcompose.Calculator.CalculatorViewmodel
+import com.example.learningjetpackcompose.ui.UserListScreen
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,11 +17,7 @@ class MainActivity : ComponentActivity() {
 
             val viewmodel: CalculatorViewmodel = viewModel()
             val state = viewmodel.state
-            Calculator(
-                state = state,
-                onAction = viewmodel::onAction,
-
-                )
+            UserListScreen()
 
         }
     }
