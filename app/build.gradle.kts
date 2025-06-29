@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id ("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp")
-
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -42,6 +42,10 @@ android {
     buildFeatures {
         compose = true
     }
+    composeCompiler {
+        reportsDestination = layout.buildDirectory.dir("compose_compiler")
+        stabilityConfigurationFile = rootProject.layout.projectDirectory.file("stability_config.conf")
+    }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
@@ -50,6 +54,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
 
 }
 
@@ -90,15 +95,15 @@ dependencies {
     // Jetpack Compose
     implementation ("androidx.compose.ui:ui:1.8.3")
     implementation ("androidx.compose.material:material:1.8.3")
-    implementation ("androidx.compose.ui:ui-tooling-preview:1.8.3")
-    implementation ("androidx.activity:activity-compose:1.4.0")
+
+    implementation ("androidx.activity:activity-compose:1.10.1")
 
     // ViewModel
     implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.1")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
 
     // Navigation
-    implementation ("androidx.navigation:navigation-compose:2.4.1")
+    implementation ("androidx.navigation:navigation-compose:2.9.0")
 
 
 
