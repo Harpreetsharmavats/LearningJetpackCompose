@@ -1,5 +1,7 @@
 package com.example.learningjetpackcompose.data.repository
 
+import android.net.http.HttpException
+import android.util.Log
 import com.example.learningjetpackcompose.data.local.UserDao
 import com.example.learningjetpackcompose.data.models.Users
 import com.example.learningjetpackcompose.data.remote.UserService
@@ -13,8 +15,15 @@ class UserRepositoryImp @Inject constructor(
     override fun getUsers(): Flow<List<Users>> = userDao.getUser()
 
     override suspend fun refreshUser() {
-        val users = userService.getUser()
-        userDao.insertAll(users)
+        try {
+            val users = userService.getUser()
+            userDao.insertAll(users)
+
+        }catch (e : retrofit2.HttpException){
+            Log.e("UserService","401")
+        }
+
+
     }
 
 

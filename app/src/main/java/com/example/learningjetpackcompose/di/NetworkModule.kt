@@ -16,7 +16,7 @@ object NetworkModule {
     @Provides
     @Singleton
      fun provideRetrofit() : Retrofit{
-        return Retrofit.Builder().baseUrl("https://jsonplaceholder.typicode.com/").addConverterFactory(
+        return Retrofit.Builder().baseUrl("https://reqres.in/api/").addConverterFactory(
             GsonConverterFactory.create()).build()
     }
 
